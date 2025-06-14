@@ -1,1 +1,235 @@
-# for-u-ayaa
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anime Couple Typing Bubble</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1c1c1c;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .scene {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .character {
+      position: relative;
+      width: 150px;
+      height: 220px;
+      margin: 40px;
+      animation: float 2.5s ease-in-out infinite;
+    }
+
+    .character img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    }
+
+    .bubble {
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      color: #333;
+      padding: 12px 16px;
+      border-radius: 12px;
+      width: 230px;
+      min-height: 80px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1.6;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      white-space: pre-line;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <!-- Cewek -->
+    <div class="character girl">
+      <img src="https://i.pinimg.com/564x/84/34/3a/84343a7be4017a3f9b9f4731e242e620.jpg" alt="Anime Girl">
+    </div>
+
+    <!-- Cowok -->
+    <div class="character boy">
+      <img src="https://i.pinimg.com/564x/bf/29/77/bf2977fe56fcb2f1b6c4389a4e1e2ea9.jpg" alt="Anime Boy">
+      <div class="bubble" id="bubbleText"></div>
+    </div>
+  </div>
+
+  <script>
+    const lines = [
+      "I love you.",
+      "Meeting you changed everything.",
+      "Now that you're here…",
+      "Please, don't go anywhere."
+    ];
+
+    const bubble = document.getElementById("bubbleText");
+    let currentLine = 0;
+
+    function typeLine(line, callback) {
+      let i = 0;
+      bubble.innerHTML += "\n";
+      const interval = setInterval(() => {
+        bubble.innerHTML = bubble.innerHTML.trimEnd() + line.charAt(i);
+        i++;
+        if (i === line.length) {
+          clearInterval(interval);
+          setTimeout(callback, 1000);
+        }
+      }, 40);
+    }
+
+    function startTyping() {
+      if (currentLine < lines.length) {
+        typeLine(lines[currentLine], () => {
+          bubble.innerHTML += "\n";
+          currentLine++;
+          startTyping();
+        });
+      }
+    }
+
+    startTyping();
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anime Couple Typing Bubble</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1c1c1c;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .scene {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .character {
+      position: relative;
+      width: 150px;
+      height: 220px;
+      margin: 40px;
+      animation: float 2.5s ease-in-out infinite;
+    }
+
+    .character img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    }
+
+    .bubble {
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      color: #333;
+      padding: 12px 16px;
+      border-radius: 12px;
+      width: 230px;
+      min-height: 80px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1.6;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      white-space: pre-line;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <!-- Cewek -->
+    <div class="character girl">
+      <img src="https://i.pinimg.com/564x/84/34/3a/84343a7be4017a3f9b9f4731e242e620.jpg" alt="Anime Girl">
+    </div>
+
+    <!-- Cowok -->
+    <div class="character boy">
+      <img src="https://i.pinimg.com/564x/bf/29/77/bf2977fe56fcb2f1b6c4389a4e1e2ea9.jpg" alt="Anime Boy">
+      <div class="bubble" id="bubbleText"></div>
+    </div>
+  </div>
+
+  <script>
+    const lines = [
+      "I love you.",
+      "Meeting you changed everything.",
+      "Now that you're here…",
+      "Please, don't go anywhere."
+    ];
+
+    const bubble = document.getElementById("bubbleText");
+    let currentLine = 0;
+
+    function typeLine(line, callback) {
+      let i = 0;
+      bubble.innerHTML += "\n";
+      const interval = setInterval(() => {
+        bubble.innerHTML = bubble.innerHTML.trimEnd() + line.charAt(i);
+        i++;
+        if (i === line.length) {
+          clearInterval(interval);
+          setTimeout(callback, 1000);
+        }
+      }, 40);
+    }
+
+    function startTyping() {
+      if (currentLine < lines.length) {
+        typeLine(lines[currentLine], () => {
+          bubble.innerHTML += "\n";
+          currentLine++;
+          startTyping();
+        });
+      }
+    }
+
+    startTyping();
+  </script>
+</body>
+</html>
